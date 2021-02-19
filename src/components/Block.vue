@@ -1,5 +1,5 @@
 <template>
-    <div class="block">
+    <div class="block" v-if="isShowBlock">
         Tekan Kotak
     </div>
 </template>
@@ -14,6 +14,25 @@ export default {
     },
     setup() {
         return {};
+    },
+    data() {
+        return {
+            isShowBlock: false,
+        };
+    },
+    mounted() {
+        console.log('Component mounted');
+        const delayTimeNumber = Number(this.delayTime);
+        setTimeout(() => {
+            this.isShowBlock = true;
+            console.log(this.delayTime);
+        }, delayTimeNumber);
+    },
+    updated() {
+        console.log('Component updated');
+    },
+    unmounted() {
+        console.log('Component unmounted');
     },
 };
 </script>
