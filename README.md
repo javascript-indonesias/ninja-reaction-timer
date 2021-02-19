@@ -1,4 +1,6 @@
-# ninja-reaction-timer
+# Ninja Reaction Timer
+
+Aplikasi cepat cepatan menekan tombol dari latihan course Net Ninja Node JS [https://www.udemy.com/course/build-web-apps-with-vuejs-firebase/](https://www.udemy.com/course/build-web-apps-with-vuejs-firebase/)
 
 ## Project setup
 ```
