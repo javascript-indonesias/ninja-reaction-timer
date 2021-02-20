@@ -1,5 +1,5 @@
 <template>
-    <div class="block" v-if="isShowBlock">
+    <div class="block" v-if="isShowBlock" @click="stopTimer()">
         Tekan Kotak
     </div>
 </template>
@@ -18,6 +18,8 @@ export default {
     data() {
         return {
             isShowBlock: false,
+            timer: null,
+            reactionTime: 0,
         };
     },
     mounted() {
@@ -25,7 +27,7 @@ export default {
         const delayTimeNumber = Number(this.delayTime);
         setTimeout(() => {
             this.isShowBlock = true;
-            console.log(this.delayTime);
+            this.startTimer();
         }, delayTimeNumber);
     },
     updated() {
@@ -33,6 +35,19 @@ export default {
     },
     unmounted() {
         console.log('Component unmounted');
+    },
+    methods: {
+        startTimer() {
+            // Menjalankan timer dengan interval
+            this.timer = setInterval(() => {
+                this.reactionTime += 10;
+            }, 10);
+        },
+        stopTimer() {
+            // Menghentikan laju timer interval
+            clearInterval(this.timer);
+            console.log(this.reactionTime);
+        },
     },
 };
 </script>
