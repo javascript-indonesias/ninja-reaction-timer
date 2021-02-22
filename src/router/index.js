@@ -6,6 +6,9 @@ import { createRouter, createWebHashHistory } from 'vue-router';
 const HomeComponent = () => import(/* webpackChunkName: "home" */ '../views/Home.vue');
 const AboutComponent = () => import(/* webpackChunkName: "about" */ '../views/About.vue');
 
+// Home component adalah latihan tentang Props dan Emit
+// Komunikasi antar component di Vue JS
+
 const routes = [
     {
         path: '/',
