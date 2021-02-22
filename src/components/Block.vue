@@ -23,19 +23,14 @@ export default {
         };
     },
     mounted() {
-        console.log('Component mounted');
         const delayTimeNumber = Number(this.delayTime);
         setTimeout(() => {
             this.isShowBlock = true;
             this.startTimer();
         }, delayTimeNumber);
     },
-    updated() {
-        console.log('Component updated');
-    },
-    unmounted() {
-        console.log('Component unmounted');
-    },
+    updated() {},
+    unmounted() {},
     methods: {
         startTimer() {
             // Menjalankan timer dengan interval
@@ -46,7 +41,11 @@ export default {
         stopTimer() {
             // Menghentikan laju timer interval
             clearInterval(this.timer);
-            console.log(this.reactionTime);
+            this.kirimDataTimerResult();
+        },
+        kirimDataTimerResult() {
+            // kirim data hasil penghitungan timer
+            this.$emit('endgame', { datatime: this.reactionTime });
         },
     },
 };
@@ -56,7 +55,7 @@ export default {
 .block {
     width: 400px;
     border-radius: 20px;
-    background: #0faf87;
+    background: #ec4646;
     color: white;
     font-weight: bold;
     font-size: 2rem;
