@@ -15,4 +15,5 @@ module.exports = {
     devServer: {
         port: 3200,
     },
+    publicPath: process.env.NODE_ENV === 'production' ? '/reaction-timer-vue/' : '/',
 };
